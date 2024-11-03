@@ -1,0 +1,25 @@
+# Load the example function and initialize AIG
+read example.v
+strash           // Structural hashing to create an AIG from the Boolean network
+print_stats      // Print initial stats of the circuit
+
+# Mapping with Cut Size 2
+#get              // Load the AIG manager for manipulation
+&st               // Transform the current AIG into a GIA representation
+&if -K 2          // Perform cut-based mapping with cut size 2
+print_stats       // Display stats to see the impact of cut size 2
+
+# Mapping with Cut Size 3
+#get
+&st
+&if -K 3          // Perform cut-based mapping with cut size 3
+print_stats       // Display stats to see the impact of cut size 3
+
+# Mapping with Cut Size 4
+#get
+&st
+&if -K 4          // Perform cut-based mapping with cut size 4
+print_stats       // Display stats to see the impact of cut size 4
+
+# End of Script
+

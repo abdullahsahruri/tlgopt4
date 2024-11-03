@@ -1,0 +1,16 @@
+read_aiger example.aig
+&get
+&st
+
+# Mapping with Cut Size 2
+if -a -K 2    // Use `-a` for area optimization
+print_stats
+
+# Mapping with Cut Size 3
+if -a -K 3
+print_stats
+
+# Mapping with Cut Size 4
+if -a -K 4
+print_stats
+

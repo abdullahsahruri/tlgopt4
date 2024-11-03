@@ -1,0 +1,12 @@
+# Load the Verilog file
+read_verilog example.v
+
+# Perform synthesis and optimization
+synth -top example
+
+# Map to AIG format
+abc -g AND
+
+# Write the AIG to a file
+write_aiger example.aig
+
